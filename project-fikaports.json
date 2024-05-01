@@ -1,0 +1,16 @@
+[
+    {
+        "Protocol": "TCP",
+        "Port": "6969",
+        "Name": "Main Game Port 1",
+        "Description": "Stay in Tarkov Port 1",
+        "Ref": "SITPort1"
+    },
+	{
+        "Protocol": "UDP",
+        "Port": "25565",
+        "Name": "TCP Relay Websocket",
+        "Description": "Stay in Tarkov Port 2",
+        "Ref": "SITPort2"
+    }
+]
