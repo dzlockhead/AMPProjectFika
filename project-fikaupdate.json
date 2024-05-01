@@ -4,20 +4,5 @@
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CreateDirectory",
         "UpdateSourceArgs": "{{$FullRootDir}}7-Zip"
-    },
-    {
-        "UpdateStageName": "7-Zip Download",
-        "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://www.7-zip.org/a/7zr.exe",
-        "UpdateSourceTarget": "{{$FullRootDir}}7-Zip"
-    },
-    {
-        "UpdateStageName": "7-Zip Download",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://www.7-zip.org/a/7z2301-linux-x64.tar.xz",
-        "UpdateSourceTarget": "{{$FullRootDir}}7-Zip",
-        "OverwriteExistingFiles": true
     }
 ]
