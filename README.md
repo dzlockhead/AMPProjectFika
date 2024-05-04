@@ -1,5 +1,5 @@
 # Project Fika for CubeCoders AMP Server
-## Template by dzlockhead
+## Template by dzlockhead and AMP Community
 
 Project Fika requires additional setup after setting up the server. See Project Fika's documentation on what is needed to be done. Clients and Server will have to perform port opening and some additional config
 
