@@ -64,7 +64,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && ../7-Zip/7zzs x -y RELEASE-SPT*.7z >/dev/null 2>&1 && rm -f RELEASE-SPT*.7z'"
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && ../7-Zip/7zzs x -y RELEASE-SPT*.7z >/dev/null 2>&1 && rm -f RELEASE-SPT*.7z'",
 		"UpdateSourceConditionSetting": "SPTVersion",
 		"UpdateSourceConditionValue": "3.8.0"
     },
@@ -82,7 +82,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && ../7-Zip/7zzs x -y SPT*.7z >/dev/null 2>&1 && rm -f SPT*.7z'"
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && ../7-Zip/7zzs x -y SPT*.7z >/dev/null 2>&1 && rm -f SPT*.7z'",
 		"UpdateSourceConditionSetting": "SPTVersion",
 		"UpdateSourceConditionValue": "3.8.1"
     },
