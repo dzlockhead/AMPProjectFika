@@ -130,7 +130,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && tar --extract --overwrite --file=SITCoop.tar.gz Aki.Server.exe'",
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && tar --extract --verbose --overwrite --file=SITCoop.tar.gz Aki.Server.exe'",
 	},
 	{
 		"UpdateStageName":"Fika Server Set Executable",
