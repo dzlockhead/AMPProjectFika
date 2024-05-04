@@ -136,6 +136,21 @@
 		"Hidden": false,
 		"IsFlagArgument":false,
 		"DefaultValue": "0.9.8875.33465"
+	},
+	{
+		"DisplayName": "SIT Version",
+		"Description": "This is the SIT (Stay In Tarkov) Version you want to download. THE MAJOR VERSION MUST MATCH THE SPT VERSION FOR SPT. The reason for this is you need the Aki.Server.exe from SIT as it's compiled for Linux.",
+		"FieldName": "SITVersion",
+		"InputType": "enum",
+		"Category": "Fika Version Settings",
+		"IncludeInCommandLine": false,
+		"ParamFieldName": "SITVersion",
+		"EnumValues": {
+		  "1.6.4AKI3.8.0-2dd4d9": "1.6.4 with AKI 3.8.0-2dd4d9"
+		},
+		"Hidden": false,
+		"IsFlagArgument":false,
+		"DefaultValue": "1.6.4AKI3.8.0-2dd4d9"
 	}
 	
 	

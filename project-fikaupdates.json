@@ -108,6 +108,33 @@
 		"SkipOnFailure": true
 	},
 	{
+        "UpdateStageName":"SIT Server Mod Download 1.6.4 with AKI 3.8.0",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://github.com/stayintarkov/SIT.Aki-Server-Mod/releases/download/1.6.4/SITCoop-1.6.4-WithAki3.8.0-2dd4d9-linux.tar.gz",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+		"UpdateSourceConditionSetting": "SITVersion",
+		"UpdateSourceConditionValue": "1.6.4AKI3.8.0-2dd4d9"
+    },
+	{
+        "UpdateStageName": "Rename SIT Download tar.gz",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && mv SITCoop* SITCoop.tar.gz >/dev/null 2>&1'",
+		"SkipOnFailure": true
+	},
+	{
+        "UpdateStageName": "Extract SIT Download Aki Executable",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && tar --extract --SITCoop.tar.gz Aki.Server.exe >/dev/null 2>&1'",
+		"SkipOnFailure": true
+	},
+	{
 		"UpdateStageName":"Fika Server Set Executable",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "SetExecutableFlag",
@@ -118,7 +145,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && del -f MPT_HOTFIX.zip"
+        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && del -f MPT_HOTFIX.zip && del -f SITCoop.tar.gz"
 	},
 	{
         "UpdateStageName": "Fika Extra Files Delete",
