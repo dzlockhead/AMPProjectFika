@@ -124,7 +124,6 @@
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && mv SITCoop* SITCoop.tar.gz >/dev/null 2>&1'",
-		"SkipOnFailure": true
 	},
 	{
         "UpdateStageName": "Extract SIT Download Aki Executable",
@@ -132,7 +131,6 @@
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && tar --extract --overwrite --file=SITCoop.tar.gz Aki.Server.exe >/dev/null 2>&1'",
-		"SkipOnFailure": true
 	},
 	{
 		"UpdateStageName":"Fika Server Set Executable",
@@ -145,14 +143,14 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && del -f MPT_HOTFIX.zip && del -f SITCoop.tar.gz"
+        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && del -f MPT_HOTFIX.zip"
 	},
 	{
         "UpdateStageName": "Fika Extra Files Delete",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && rm -f MPT_HOTFIX.zip'"
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && rm -f MPT_HOTFIX.zip && del -f SITCoop.tar.gz'"
 	},
 	{
 		"UpdateStageName": "Fika First Time Startup",
