@@ -4,7 +4,7 @@
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CreateDirectory",
         "UpdateSourceArgs": "{{$FullRootDir}}7-Zip"
-    },	
+    },
     {
         "UpdateStageName": "7-Zip Download",
         "UpdateSourcePlatform": "Windows",
@@ -20,65 +20,99 @@
         "UpdateSourceTarget": "{{$FullRootDir}}7-Zip",
         "OverwriteExistingFiles": true
     },
-    {
-        "UpdateStageName": "Download SPT AKI",
+	{
+        "UpdateStageName":"7-Zip Files Extract",
+        "UpdateSourcePlatform":"Linux",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"/bin/bash",
+        "UpdateSourceArgs":"-c 'cd ./ProjectFika/7-Zip && /usr/bin/tar -xf 7z2301-linux-x64.tar.xz >/dev/null 2>&1 && rm -f 7z2301-linux-x64.tar.xz'",
+        "SkipOnFailure":false
+    },
+	{
+        "UpdateStageName": "Download SPT AKI 3.8.0",
         "UpdateSourcePlatform": "All",
-        "UpdateSource": "GithubRelease",
+        "UpdateSource": "FetchURL",
         "UpdateSourceData": "https://dev.sp-tarkov.com/SPT-AKI/Stable-releases/releases/download/3.8.0/RELEASE-SPT-3.8.0-29197-2dd4d91.7z",
-        "UpdateSourceArgs": "BeamMP/BeamMP-Server",
-        "UpdateSourceArch": "x86_64",
-        "UpdateSourceVersion": "3.8.0",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UnzipUpdateSource": false,
-        "OverwriteExistingFiles": true
+        "OverwriteExistingFiles": true,
+		"UpdateSourceConditionSetting": "SPTVersion",
+		"UpdateSourceConditionValue": "3.8.0"
     },
-    {
-        "UpdateStageName": "7-Zip Files Extract",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./sit/7-Zip && /usr/bin/tar -xf 7z2301-linux-x64.tar.xz >/dev/null 2>&1 && rm -f 7z2301-linux-x64.tar.xz'"
+	{
+        "UpdateStageName":"SPT Files Extract",
+        "UpdateSourcePlatform":"Windows",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"cmd.exe",
+        "UpdateSourceArgs":"/C cd .\\ProjectFika\\server && ..\\7-Zip\\7zr.exe x -y RELEASE-SPT*.7z > NUL 2>&1 && del /Q /F RELEASE-SPT*.7z"
     },
-    {
-        "UpdateStageName": "7-Zip Files Extract",
-        "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C cd sit\\server && ..\\7-Zip\\7zr.exe x -y pf2_full_*.7z.001 > NUL 2>&1 && del /Q /F pf2_full_*.7z.*"
-    },
-    {
-        "UpdateStageName": "SPT Files Extract",
-        "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C cd sit\\server && ..\\7-Zip\\7zr.exe x -y RELEASE-SPT*.7z.001 > NUL 2>&1 && del /Q /F RELEASE-SPT*.7z.*"
-    },
-    {
+	{
         "UpdateStageName": "SPT Files Extract",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./sit/server && ../7-Zip/7zzs x -y RELEASE-SPT*.7z.001 >/dev/null 2>&1 && rm -f RELEASE-SPT*.7z.*'"
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && ../7-Zip/7zzs x -y RELEASE-SPT*.7z >/dev/null 2>&1 && rm -f RELEASE-SPT*.7z'"
     },
-    {
-        "UpdateStageName": "SIT Download",
+	{
+        "UpdateStageName": "SPT Extra Files Delete",
         "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "GithubRelease",
-        "UpdateSourceData": "*win.zip",
-        "UpdateSourceArgs": "stayintarkov/SIT.Aki-Server-Mod",
-        "UpdateSourceTarget": "{{$FullBaseDir}}",
-        "UnzipUpdateSource": true,
-        "OverwriteExistingFiles": true
-    },
-    {
-        "UpdateStageName": "SIT Download",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "cmd.exe",
+        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && del /F /Q Aki.Launcher.exe ; del /F /Q  EscapeFromTarkov_Data ; del /F /Q  BepInEx ; del /F /Q doorstop_config.ini ; del /F /Q winhttp.dll"
+	},
+	{
+        "UpdateStageName": "SPT Extra Files Delete",
         "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "GithubRelease",
-        "UpdateSourceData": "*linux.tar.gz",
-        "UpdateSourceArgs": "stayintarkov/SIT.Aki-Server-Mod",
-        "UpdateSourceArch": "x86_64",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && rm -f Aki.Launcher.exe ; rm -f -r  EscapeFromTarkov_Data ; rm -f -r  BepInEx ; rm -f doorstop_config.ini ; rm -f winhttp.dll'"
+	},
+	{
+        "UpdateStageName":"Fika Server Mod Download 1.6.4 with AKI 3.8.0",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://cdn.discordapp.com/attachments/1230966002502865066/1231353742125826088/MPT_HOTFIX_2_0.9.8876.41975.zip?ex=6636a689&is=66355509&hm=961ee2b36c0cf5b27272c65d98f5494186137804dd2ee54e12e598935d07b665&",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UnzipUpdateSource": true,
-        "OverwriteExistingFiles": true
-    }
+        "OverwriteExistingFiles": true,
+		"UpdateSourceConditionSetting": "FikaVersion",
+		"UpdateSourceConditionValue": "0.9.8875.33465"
+    },
+	{
+		"UpdateStageName":"Fika Server Set Executable",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "SetExecutableFlag",
+        "UpdateSourceArgs": "{{$FullBaseDir}}Aki.Server.exe"
+	},
+	{
+        "UpdateStageName": "Fika Extra Files Delete",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "cmd.exe",
+        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && rm -f SITCoop*.zip"
+	},
+	{
+        "UpdateStageName": "Fika Extra Files Delete",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && rm -f SITCoop*tar.gz'"
+	},
+	{
+		"UpdateStageName": "Fika First Time Startup",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "StartApplication"
+	},
+	{
+		"UpdateStageName": "Fika Wait for Application Startup",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "WaitForStartupComplete"
+	},
+	{
+		"UpdateStageName": "Fika End First Time Startup",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "ShutdownApplication"
+	}
+	
+	
 ]

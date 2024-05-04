@@ -2,15 +2,15 @@
     {
         "Protocol": "TCP",
         "Port": "6969",
-        "Name": "Main Game Port 1",
-        "Description": "Stay in Tarkov Port 1",
-        "Ref": "SITPort1"
+        "Name": "Main Game Port",
+        "Description": "Project Fika Main Game Port",
+        "Ref": "FikaPort1"
     },
 	{
         "Protocol": "UDP",
         "Port": "25565",
         "Name": "TCP Relay Websocket",
-        "Description": "Stay in Tarkov Port 2",
-        "Ref": "SITPort2"
+        "Description": "Project Fika TCP Relay Websocket",
+        "Ref": "FikaPort2"
     }
 ]
