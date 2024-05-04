@@ -131,7 +131,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && tar --extract --SITCoop.tar.gz Aki.Server.exe >/dev/null 2>&1'",
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && tar --extract --overwrite --file=SITCoop.tar.gz Aki.Server.exe >/dev/null 2>&1'",
 		"SkipOnFailure": true
 	},
 	{
