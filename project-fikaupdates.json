@@ -123,7 +123,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && mv SITCoop* SITCoop.tar.gz >/dev/null 2>&1'",
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && mv SITCoop* SITCoop.tar.gz >/dev/null 2>&1'"
 	},
 	{
         "UpdateStageName": "Extract SIT Download Aki Executable",
@@ -151,22 +151,5 @@
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && rm -f MPT_HOTFIX.zip && rm -f SITCoop.tar.gz'"
-	},
-	{
-		"UpdateStageName": "Fika First Time Startup",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "StartApplication"
-	},
-	{
-		"UpdateStageName": "Fika Wait for Application Startup",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "WaitForStartupComplete"
-	},
-	{
-		"UpdateStageName": "Fika End First Time Startup",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "ShutdownApplication"
 	}
-	
-	
 ]

@@ -1,0 +1,16 @@
+,
+	{
+		"UpdateStageName": "Fika First Time Startup",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "StartApplication"
+	},
+	{
+		"UpdateStageName": "Fika Wait for Application Startup",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "WaitForStartupComplete"
+	},
+	{
+		"UpdateStageName": "Fika End First Time Startup",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "ShutdownApplication"
+	}
