@@ -100,11 +100,11 @@
         "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && tar -xf MPT_HOTFIX.zip"
 	},
 	{
-        "UpdateStageName": "Rename Fika Download Zip",
+        "UpdateStageName": "Extract Fika Download Zip",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && tar xvf MPT_HOTFIX.zip'"
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && unzip -o MPT_HOTFIX.zip'"
 	},
 	{
 		"UpdateStageName":"Fika Server Set Executable",
