@@ -118,7 +118,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && rm -f MPT_HOTFIX.zip"
+        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && del -f MPT_HOTFIX.zip"
 	},
 	{
         "UpdateStageName": "Fika Extra Files Delete",
