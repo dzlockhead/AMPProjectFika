@@ -90,7 +90,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && mv MPT_HOTFIX* MPT_HOTFIX.zip'"
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && mv MPT_HOTFIX* MPT_HOTFIX.zip >/dev/null 2>&1'"
 	},
 	{
         "UpdateStageName": "Extract Fika Download Zip",
