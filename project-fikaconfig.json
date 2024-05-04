@@ -139,7 +139,7 @@
 	},
 	{
 		"DisplayName": "SIT Version",
-		"Description": "This is the SIT (Stay In Tarkov) Version you want to download. THE MAJOR VERSION MUST MATCH THE SPT VERSION FOR SPT. The reason for this is you need the Aki.Server.exe from SIT as it's compiled for Linux.",
+		"Description": "This is the SIT (Stay In Tarkov) Version you want to download. THE MAJOR VERSION MUST MATCH THE SPT VERSION FOR SPT. The reason for this is you need the Aki.Server.exe from SIT as it's compiled for Linux. If you are on Windows, you can ignore this.",
 		"FieldName": "SITVersion",
 		"InputType": "enum",
 		"Category": "Fika Version Settings",
