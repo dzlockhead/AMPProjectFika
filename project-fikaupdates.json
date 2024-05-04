@@ -150,7 +150,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && rm -f MPT_HOTFIX.zip && del -f SITCoop.tar.gz'"
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && rm -f MPT_HOTFIX.zip && rm -f SITCoop.tar.gz'"
 	},
 	{
 		"UpdateStageName": "Fika First Time Startup",
