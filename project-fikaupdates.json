@@ -104,7 +104,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && unzip -o MPT_HOTFIX.zip'"
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && unzip -o MPT_HOTFIX.zip >/dev/null 2>&1'"
 	},
 	{
 		"UpdateStageName":"Fika Server Set Executable",
