@@ -1,9 +1,9 @@
 Meta.DisplayName=Project Fika
 Meta.Description=Project Fika Dedicated Server (NOT COMMERCIAL ONLY)
 Meta.OS=Windows, Linux
-Meta.AarchSupport=Native
-Meta.Arch=All
-Meta.Author=dzlockhead
+Meta.AarchSupport=Unknown
+Meta.Arch=x86_64
+Meta.Author=dzlockhead and AMP Community
 Meta.URL=https://github.com/project-fika
 Meta.DisplayImageSource=https://avatars.githubusercontent.com/u/151196584?s=200&v=4
 Meta.EndpointURIFormat=
@@ -15,7 +15,7 @@ Meta.SpecificDockerImage=
 Meta.DockerRequired=False
 Meta.ContainerPolicy=Supported
 Meta.ContainerPolicyReason=
-Meta.ExtraSetupStepsURI=
+Meta.ExtraSetupStepsURI=https://github.com/dzlockhead/AMPProjectFika/tree/main
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=True
 Meta.AppConfigId=aeb99c9c-5cb5-4e02-85f1-2d3670b013dd
