@@ -55,7 +55,9 @@
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C cd .\\ProjectFika\\server && ..\\7-Zip\\7zr.exe x -y RELEASE-SPT*.7z > NUL 2>&1 && del /Q /F RELEASE-SPT*.7z"
+        "UpdateSourceArgs":"/C cd .\\ProjectFika\\server && ..\\7-Zip\\7zr.exe x -y RELEASE-SPT*.7z > NUL 2>&1 && del /Q /F RELEASE-SPT*.7z",
+		"UpdateSourceConditionSetting": "SPTVersion",
+		"UpdateSourceConditionValue": "3.8.0"
     },
 	{
         "UpdateStageName": "SPT Files Extract",
@@ -63,6 +65,26 @@
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && ../7-Zip/7zzs x -y RELEASE-SPT*.7z >/dev/null 2>&1 && rm -f RELEASE-SPT*.7z'"
+		"UpdateSourceConditionSetting": "SPTVersion",
+		"UpdateSourceConditionValue": "3.8.0"
+    },
+	{
+        "UpdateStageName":"SPT Files Extract",
+        "UpdateSourcePlatform":"Windows",
+        "UpdateSource":"Executable",
+        "UpdateSourceData":"cmd.exe",
+        "UpdateSourceArgs":"/C cd .\\ProjectFika\\server && ..\\7-Zip\\7zr.exe x -y SPT*.7z > NUL 2>&1 && del /Q /F SPT*.7z",
+		"UpdateSourceConditionSetting": "SPTVersion",
+		"UpdateSourceConditionValue": "3.8.1"
+    },
+	{
+        "UpdateStageName": "SPT Files Extract",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && ../7-Zip/7zzs x -y SPT*.7z >/dev/null 2>&1 && rm -f SPT*.7z'"
+		"UpdateSourceConditionSetting": "SPTVersion",
+		"UpdateSourceConditionValue": "3.8.1"
     },
 	{
         "UpdateStageName": "SPT Extra Files Delete",
