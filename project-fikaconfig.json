@@ -116,11 +116,12 @@
 		"IncludeInCommandLine": false,
 		"ParamFieldName": "SPTVersion",
 		"EnumValues": {
-		  "3.8.0": "3.8.0"
+		  "3.8.0": "3.8.0",
+		  "3.8.1": "3.8.1"
 		},
 		"Hidden": false,
 		"IsFlagArgument":false,
-		"DefaultValue": "3.8.0"
+		"DefaultValue": "3.8.1"
 	},
 	{
 		"DisplayName": "Project Fika Version",
@@ -131,7 +132,8 @@
 		"IncludeInCommandLine": false,
 		"ParamFieldName": "FikaVersion",
 		"EnumValues": {
-		  "0.9.8875.33465": "0.9.8875.33465"
+		  "0.9.8875.33465": "0.9.8875.33465",
+		  "0.9.8890.36671": "0.9.8890.36671"
 		},
 		"Hidden": false,
 		"IsFlagArgument":false,
