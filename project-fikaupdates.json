@@ -40,6 +40,17 @@
 		"UpdateSourceConditionValue": "3.8.0"
     },
 	{
+        "UpdateStageName": "Download SPT AKI 3.8.1",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://spt-releases.modd.in/SPT-3.8.1-29197-d3ac83e.7z",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": true,
+		"UpdateSourceConditionSetting": "SPTVersion",
+		"UpdateSourceConditionValue": "3.8.1"
+    },
+	{
         "UpdateStageName":"SPT Files Extract",
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
@@ -58,17 +69,19 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && del /F /Q Aki.Launcher.exe ; del /F /Q  EscapeFromTarkov_Data ; del /F /Q  BepInEx ; del /F /Q doorstop_config.ini ; del /F /Q winhttp.dll"
+        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && del /F /Q Aki.Launcher.exe ; del /F /Q  EscapeFromTarkov_Data ; del /F /Q  BepInEx ; del /F /Q doorstop_config.ini ; del /F /Q winhttp.dll",
+		"SkipOnFailure": true
 	},
 	{
         "UpdateStageName": "SPT Extra Files Delete",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && rm -f Aki.Launcher.exe ; rm -f -r  EscapeFromTarkov_Data ; rm -f doorstop_config.ini ; rm -f winhttp.dll'"
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && rm -f Aki.Launcher.exe ; rm -f -r  EscapeFromTarkov_Data ; rm -f doorstop_config.ini ; rm -f winhttp.dll'",
+		"SkipOnFailure": true
 	},
 	{
-        "UpdateStageName":"Fika Server Mod Download 1.6.4 with AKI 3.8.0",
+        "UpdateStageName":"Fika Server Mod Download 0.9.8875 with AKI 3.8.0",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
         "UpdateSourceData": "https://cdn.discordapp.com/attachments/1230966002502865066/1231353742125826088/MPT_HOTFIX_2_0.9.8876.41975.zip?ex=6636a689&is=66355509&hm=961ee2b36c0cf5b27272c65d98f5494186137804dd2ee54e12e598935d07b665&",
@@ -79,25 +92,42 @@
 		"UpdateSourceConditionValue": "0.9.8875.33465"
     },
 	{
+        "UpdateStageName":"Fika Server Mod Download 0.9.8890 with AKI 3.8.1",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://github.com/project-fika/Fika-Server/releases/download/v2.0/fika-server.zip",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+		"UpdateSourceConditionSetting": "FikaVersion",
+		"UpdateSourceConditionValue": "0.9.8890.36671"
+    },
+	{
         "UpdateStageName": "Rename Fika Download Zip",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && ren MPT* MPT_HOTFIX.zip"
+        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && ren MPT* MPT_HOTFIX.zip",
+		"UpdateSourceConditionSetting": "FikaVersion",
+		"UpdateSourceConditionValue": "0.9.8875.33465"
 	},
 	{
         "UpdateStageName": "Rename Fika Download Zip",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && mv MPT_HOTFIX* MPT_HOTFIX.zip >/dev/null 2>&1'"
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && mv MPT_HOTFIX* MPT_HOTFIX.zip >/dev/null 2>&1'",
+		"UpdateSourceConditionSetting": "FikaVersion",
+		"UpdateSourceConditionValue": "0.9.8875.33465"
 	},
 	{
         "UpdateStageName": "Extract Fika Download Zip",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && tar -xf MPT_HOTFIX.zip"
+        "UpdateSourceArgs": "/C cd .\\ProjectFika\\server\\ && tar -xf MPT_HOTFIX.zip",
+		"UpdateSourceConditionSetting": "FikaVersion",
+		"UpdateSourceConditionValue": "0.9.8875.33465"
 	},
 	{
         "UpdateStageName": "Extract Fika Download Zip",
@@ -105,6 +135,8 @@
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && unzip -o MPT_HOTFIX.zip >/dev/null 2>&1'",
+		"UpdateSourceConditionSetting": "FikaVersion",
+		"UpdateSourceConditionValue": "0.9.8875.33465",
 		"SkipOnFailure": true
 	},
 	{
@@ -130,7 +162,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && tar --extract --verbose --overwrite --file=SITCoop.tar.gz Aki.Server.exe'",
+        "UpdateSourceArgs": "-c 'cd ./ProjectFika/server/ && tar --extract --verbose --overwrite --file=SITCoop.tar.gz Aki.Server.exe'"
 	},
 	{
 		"UpdateStageName":"Fika Server Set Executable",
